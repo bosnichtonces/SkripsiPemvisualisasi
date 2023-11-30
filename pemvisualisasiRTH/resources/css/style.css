@@ -1,0 +1,5 @@
+.table-fixed tbody {
+    height: 200px; /* Sesuaikan dengan tinggi yang Anda inginkan */
+    overflow-y: auto;
+    display: block;
+}

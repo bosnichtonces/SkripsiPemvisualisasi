@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\KelurahanController;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*
 Route::get('/', function () {
-    return view('homePage' ,[
-        "title" => "Home"
-    ]);
+    // return view('homePage' ,[
+    //     "title" => "Home"
+    // ]);
+    $response = Http::get('http://data.bandung.go.id/index.php/portal/api/232aec16-4a9c-42db-a490-1a34143556bc');
+    return $response->json();
+    
+
 });
+*/
+
+//Route::get('/', [Controller::class , 'home' ])->name('home');
+
+//Route::get('/',[KelurahanController::class,'index'])->name('index');
+
+Route::get('/', [Controller::class , 'home' ])->name('home');
